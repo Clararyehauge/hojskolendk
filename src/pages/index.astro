@@ -10,6 +10,9 @@ import DropDown from "../components/DropDown.astro";
 ---
 
 <MainLayout title="Forside">
+  <section>
+    <img src="/bus.webp" alt="hero" class="w-full h-screen object-cover" />
+  </section>
   <section class="bg-primary-400 p-10 md:p-20">
     <h2 class="pb-5 md:pb-10 text-[17px] md:text-[27px] text-center">HÖJSKOLENDKS DESTINATIONER</h2>
     <style>
@@ -130,7 +133,7 @@ import DropDown from "../components/DropDown.astro";
   </section>
   <section class="bg-primary-400 p-10 md:p-20">
     <div class="grid md:grid-cols-2">
-      <div>
+      <div class="md:pl-30">
         <img class="w-95" src="/section8.webp" alt="fællesbillede" />
       </div>
       <div>
@@ -199,9 +202,9 @@ import DropDown from "../components/DropDown.astro";
   </section>
 
   <section class="bg-secondary-400">
-    <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px] text-center">Trustpilot og udtalelser</h3>
-    <div class="carousel-container">
-      <div class="carousel-track">
+    <h3 class="pb-5 md:pb-10 pt-7 md:pt-13 text-[17px] md:text-[27px] text-center">Trustpilot og udtalelser</h3>
+    <div class="carousel-container pb-5 md:pb-10">
+      <div class="carousel-track pl-5 md:pl-5">
         <div class="bg-primary-400 md:p-10 rounded-2xl">
           <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Gør det- du vil aldrig fortryde det"</p>
@@ -233,7 +236,6 @@ import DropDown from "../components/DropDown.astro";
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Kristoffer Strandhauge</p>
         </div>
       </div>
-
       <div class="carousel-buttons">
         <button class="carousel-button prev">&#10094;</button>
         <button class="carousel-button next">&#10095;</button>
@@ -257,12 +259,45 @@ import DropDown from "../components/DropDown.astro";
       </div>
     </div>
   </section>
-  <section class="bg-primary-400 p-10 md:p-20">
-    <h2 class="pb-5 md:pb-10 text-[17px] md:text-[27px] text-center">VORES SAMARBEJDSPARTNERE</h2>
-    <div class="grid md:grid-cols-4">
-      <img src="public/rejsegaranti.webp" alt="rejsegaranti" /><img src="/jyskrejsebureau.webp" alt="jyskrejsebureau" /><img src="/gouda.webp" alt="gouda" /><img src="/coneutralt.webp" alt="coneutralt" />
+  <section class="bg-primary-400">
+    <h2 class="md:pb-5 pt-10 md:pt:12 text-[17px] md:text-[27px] text-center">VORES SAMARBEJDSPARTNERE</h2>
+
+    <div class="loop overflow-hidden relative">
+      <div class="loop-track flex w-[200%] animate-scroll gap-17 pb-10">
+        <img src="public/rejsegaranti.webp" alt="rejsegaranti" class="w-1/4 object-contain" />
+        <img src="/jyskrejsebureau.webp" alt="jyskrejsebureau" class="w-1/4 object-contain" />
+        <img src="/gouda.webp" alt="gouda" class="w-1/4 object-contain" />
+        <img src="/coneutralt.webp" alt="coneutralt" class="w-1/4 object-contain" />
+        <img src="public/rejsegaranti.webp" alt="rejsegaranti" class="w-1/4 object-contain" />
+        <img src="/jyskrejsebureau.webp" alt="jyskrejsebureau" class="w-1/4 object-contain" />
+        <img src="/gouda.webp" alt="gouda" class="w-1/4 object-contain" />
+        <img src="/coneutralt.webp" alt="coneutralt" class="w-1/4 object-contain" />
+      </div>
     </div>
   </section>
+
+  <style>
+    .loop {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .loop-track {
+      display: flex;
+      width: 200%;
+      animation: scroll 20s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const carousels = document.querySelectorAll(".carousel-container");
