@@ -10,11 +10,19 @@ import DropDown from "../components/DropDown.astro";
 ---
 
 <MainLayout title="Forside">
-  <section>
+ <section>
     <img src="/bus.webp" alt="hero" class="w-full h-screen object-cover" />
+   <div class="animate-bounce absolute inset-x-0 bottom-5 flex justify-center">
+    <div class="relative w-16 h-16">
+      <span class="absolute left-0 top-1/2 w-[60%] h-[4px] bg-white rotate-45 rounded-full"></span>
+      <span class="absolute right-0 top-1/2 w-[60%] h-[4px] bg-white -rotate-45 rounded-full"></span>
+    </div>
+  </div>
   </section>
+
+
   <section class="bg-primary-400 p-10 md:p-20">
-    <h2 class="pb-5 md:pb-10 text-[17px] md:text-[27px] text-center">HÖJSKOLENDKS DESTINATIONER</h2>
+    <h2 class="animate-fade-down animate-once animate-ease-in pb-5 md:pb-10 text-[17px] md:text-[27px] text-center">HÖJSKOLENDKS DESTINATIONER</h2>
     <style>
       .carousel-container {
         overflow: hidden;
@@ -57,10 +65,10 @@ import DropDown from "../components/DropDown.astro";
 
     <div class="carousel-container">
       <div class="carousel-track">
-        <img src="/srilanka.webp" alt="srilanka" />
-        <img src="/japan.webp" alt="japan" />
-        <img src="/dubai.webp" alt="dubai" />
-        <img src="/vietnam.webp" alt="vietnam" />
+        <img src="/srilanka.webp" class="transition-transform duration-300 hover:scale-105" alt="srilanka" />
+        <img src="/japan.webp" class="transition-opacity duration-500 hover:opacity-75" alt="japan" />
+        <img src="/dubai.webp" />
+        <img src="/vietnam.webp" />
         <img src="/bali.webp" alt="bali" />
         <img src="/nepal.webp" alt="nepal" />
         <img src="/thailand.webp" alt="thailand" />
@@ -98,7 +106,7 @@ import DropDown from "../components/DropDown.astro";
         <h2 class="pb-5 md:pb-10 pt-5 md:pt-0text-[17px] md:text-[27px]">HØJSKOLE I UDLANDET FOR UNGE</h2>
         <p class="text-[12px] md:text-[16px] max-w-[400px] md:max-w-[600px] pb-5 md:pb-8">Drømmer du om at rejse på højskole i udlandet for unge? Når du rejser med HÖJSKOLENDK, får du dit livs eventyr og vi garanterer dig masser af fællesskab, fantastiske oplevelser og meningsfuld læring. Et højskoleophold i udlandet er noget, du bare skal prøve mindst én gang i dit liv – du vil aldrig fortryde, at du tog afsted. Og du kan glæde dig til nye venskaber og oplevelser for livet.</p>
         <p class="text-[12px] md:text-[16px] max-w-[400px] md:max-w-[600px]">Med HÖJSKOLENDK kan du komme på rejsende højskole i stort set alle hjørner af verdenen. Drømmer du om smukke og vilde naturoplevelser på Bali, Hawaii, Maldiverne eller i Australien? Storbyseventyr i New York, Sydney, Tokyo, Bangkok eller Rio de Janeiro?</p>
-        <button class="text-[12px] md:text-[16px] underline decoration-tertiary-400 text-black rounded pt-5 md:pt-8"> Læs mere </button>
+        <button class="animate-pulse animate-infinite text-[12px] md:text-[16px] underline decoration-tertiary-400 text-black rounded pt-5 md:pt-8"> Læs mere </button>
       </div>
     </div>
   </section>
@@ -190,9 +198,10 @@ import DropDown from "../components/DropDown.astro";
       </div>
     </div>
     <div class="bg-primary-400 flex justify-center mt-10">
-      <a class="underline decoration-tertiary-400 text-black rounded decoration-2 text-[17px] md:text-[20px]" href="https://www.hojskolendk.dk/om-os/blog/">Se flere blogs</a>
+      <a class="animate-pulse animate-infinite underline decoration-tertiary-400 text-black rounded decoration-2 text-[17px] md:text-[20px]" href="https://www.hojskolendk.dk/om-os/blog/">Se flere blogs</a>
     </div>
   </section>
+
   <section class="grid grid-cols-5 md:grid-cols-5 gap-0">
     <img src="/section111.webp" alt="billede af undervisning" class="w-full h-full object-cover" />
     <img src="/section112.webp" alt="billede af vandfald" class="w-full h-full object-cover" />
@@ -206,32 +215,32 @@ import DropDown from "../components/DropDown.astro";
     <div class="carousel-container pb-5 md:pb-10">
       <div class="carousel-track pl-5 md:pl-5">
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Gør det- du vil aldrig fortryde det"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Casper Kristensen</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Mit livs oplevelse. Fantatisk"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Søren Schmidt</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Höjskolendk er rejseoplevelsernes <br /> svar på Ryan Gosling."</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Lise T. Hansen</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"En fantastisk og lærerig oplevelse"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Benjamin Uhleman</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Den bedste beslutning jeg nogensinde har taget"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Anna D. Mikkelsen</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Min rejse med Höjskolendk er <br /> noget af det bedste jeg har gjordt for mig selv!"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Kristoffer Strandhauge</p>
         </div>
