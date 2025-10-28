@@ -47,6 +47,9 @@ import DropDown from "../components/DropDown.astro";
         cursor: pointer;
         font-size: 1.2rem;
       }
+      .carousel-track > div {
+        flex: 0 0 auto; /* vigtigt */
+      }
     </style>
 
     <div class="carousel-container">
@@ -101,81 +104,132 @@ import DropDown from "../components/DropDown.astro";
     <DropDown />
   </section>
   <section class="grid md:grid-cols-5">
-    <img src="" alt="img" /><img src="" alt="img" /><img src="" alt="img" /><img src="" alt="img" /><img src="" alt="img" />
+    <img src="/japanby.webp" alt="billede af japan" /><img src="/elefanter.webp" alt="billeder af elefaner i naturen" /><img src="/zipline.webp" alt="billede af cykel på zipline" /><img src="/ballon.webp" alt="billede af luftballon" /><img src="/ski.webp" alt="billede fra ski med bjerge" />
   </section>
   <section class="bg-primary-400 p-10 md:p-20">
-    <h2>HVORFOR REJSE MED HÖJSKOLENDK?</h2>
+    <h2 class="pb-5 md:pb-10 text-[17px] md:text-[27px]">HVORFOR REJSE MED HÖJSKOLENDK?</h2>
     <div class="grid md:grid-cols-3 gap-20">
       <div>
-        <h3>Sikkerhed</h3>
+        <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px] text-[var(--color-tertiary-400)]">Sikkerhed</h3>
         <p>Du er sikker på en tryg rejseoplevelse da vi er medlem af Rejsegarantifonden. Det er vores fornemmeste opgave at tage godt hånd om dig, så du føler dig tryg.</p>
       </div>
       <div>
-        <h3>Fællesskab</h3>
+        <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px] text-[var(--color-tertiary-400)]">Fællesskab</h3>
         <p>På HÖJSKOLENDK garanterer vi dig masser af fællesskab. Fællesskab er essensen med vores højskoleophold, og det ønsker vi at du bliver en del af.</p>
       </div>
       <div>
-        <h3>Kvalitet</h3>
+        <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px] text-[var(--color-tertiary-400)]">Kvalitet</h3>
         <p>Hos HÖJSKOLENDK går vi ikke på kompromis. Vi tilbyder kun de mest attraktive højskoleophold i samarbejde med dygtige samarbejdspartnere.</p>
       </div>
     </div>
   </section>
   <section class="bg-primary-400 p-10 md:p-20">
-    <div class="grid md:grid-cols-3">
+    <div class="grid md:grid-cols-2">
       <div>
-        <img src="" alt="img" />
+        <img class="w-95" src="/section8.webp" alt="fællesbillede" />
       </div>
       <div>
-        <h2>TAG PÅ HØLSKOLE I UDLANDET</h2>
-        <p>Når du rejser på højskole i udlandet med HÖJSKOLENDK <br />- Bliver du en del af et fantastisk fællesskab med et stærkt sammenhold<br />- Får du masser af vilde naturoplevelser, adventure og spændende kulturmøder<br />- Opdager du nye og stærke sider af dig selv, flytter grænser og får mere selvtillid<br />- Rejser du altid med danske passionerede rejseledere og engagerede undervisere<br />- Får du et uforglemmeligt, unikt og trygt rejseeventyr for livet <br />Med vores unikke kombination af højskole, grupperejser, rejseeventyr, frihed, kulturmøder og spændende undervisning, vil vi inspirere dig til at finde ind til hvad der er vigtigst for dig i livet – hvad du virkeligt brænder for og kan mærke er meningsfuldt – så du kan forfølge dine drømme.</p>
+        <h2 class="pb-5 md:pb-10 text-[17px] md:text-[27px]">TAG PÅ HØLSKOLE I UDLANDET</h2>
+        <p class="text-[12px] md:text-[16px] max-w-auto mx-auto">
+          Når du rejser på højskole i udlandet med HÖJSKOLENDK <br />- Bliver du en del af et fantastisk fællesskab med et stærkt sammenhold<br />- Får du masser af vilde naturoplevelser, adventure og spændende kulturmøder<br />- Opdager du nye og stærke sider af dig selv, flytter grænser og får mere selvtillid<br />- Rejser du altid med danske passionerede rejseledere og engagerede undervisere<br />- Får du et uforglemmeligt, unikt og trygt rejseeventyr for livet
+        </p>
+        <p class="text-[12px] md:text-[16px] max-w-auto mx-auto mt-10">Med vores unikke kombination af højskole, grupperejser, rejseeventyr, frihed, kulturmøder og spændende undervisning, vil vi inspirere dig til at finde ind til hvad der er vigtigst for dig i livet – hvad du virkeligt brænder for og kan mærke er meningsfuldt – så du kan forfølge dine drømme.</p>
       </div>
     </div>
   </section>
+
   <section class="bg-secondary-400 p-10 md:p-20">
-    <h2>Infomøder</h2>
-    <p>Kig forbi et af vores hyggelige infomøder i København, Aarhus eller online – vi glæder os til at møde dig!</p>
-    <div class="grid md:grid-cols-3">
-      <div>
-        <h3>Online infomøde</h3>
-        <p>12. November 2025 Kl 17-19</p>
-        <p>10. December 2025 Kl 17-19</p>
-        <button>Tilmeld dig her</button>
-      </div>
-      <div>
-        <h3>København</h3>
-        <p>18. November 202 Kl 17-19</p>
-        <h3>Aarhus</h3>
-        <p>06. November 202 Kl 17-19</p>
+    <div class="max-w-[900px] mx-auto text-center">
+      <h2 class="pb-5 md:pb-5 text-[17px] md:text-[27px]">INFOMØDER</h2>
+
+      <p class="text-[12px] md:text-[16px] mt-0">Kig forbi et af vores hyggelige infomøder i København, Aarhus eller online – vi glæder os til at møde dig!</p>
+
+      <div class="grid md:grid-cols-2 gap-10 justify-items-center mt-10 text-left w-full ml-9">
+        <div class="w-full md:w-[80%]">
+          <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px]">København</h3>
+          <p class="text-[12px] md:text-[16px]">18. November 2025 Kl 17-19</p>
+
+          <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px] mt-10">Aarhus</h3>
+          <p class="text-[12px] md:text-[16px]">06. November 2025 Kl 17-19</p>
+        </div>
+
+        <div class="w-full md:w-[80%]">
+          <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px]">Online infomøde</h3>
+          <p class="text-[12px] md:text-[16px]">12. November 2025 Kl 17-19</p>
+          <p class="text-[12px] md:text-[16px] mt-2">10. December 2025 Kl 17-19</p>
+          <button class="mt-4">Tilmeld dig her</button>
+        </div>
       </div>
     </div>
   </section>
   <section class="bg-primary-400 p-10 md:p-20">
-    <h2>BLOG</h2>
-    <div class="grid md:grid-cols-3">
+    <h2 class="pb-5 md:pb-10 text-[17px] md:text-[27px]">BLOG</h2>
+    <div class="grid md:grid-cols-3 gap-10">
       <div>
-        <img src="" alt="img" />
-        <h3>Dit sabbatår - make the most of it</h3>
-        <p>Hvis du skal ha’ dig et (eller flere) sabbatår, drømmer du sikkert om at det bliver verdens fedeste år. For lige nøjagtigt dig – og det forstår vi godt. Men…</p>
+        <img src="/section101.webp" alt="billede af surfboard" />
+        <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px] text-[var(--color-tertiary-400)] mt-5">Dit sabbatår - make the most of it</h3>
+        <p class="text-[12px] md:text-[16px]">Hvis du skal ha’ dig et (eller flere) sabbatår, drømmer du sikkert om at det bliver verdens fedeste år. For lige nøjagtigt dig – og det forstår vi godt. Men…</p>
       </div>
       <div>
-        <img src="" alt="img" />
-        <h3>Glem jagten på lykke</h3>
-        <p>Hvordan kan det være at flere mennesker end nogensinde oplever stress, angst, depression, ensomhed, m.v. når vi lever i en tid med mere velstand, flere muligheder og et højere uddannelsesniveau…</p>
+        <img src="/section102.webp" alt="billede af redbullbil" />
+        <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px] text-[var(--color-tertiary-400)] mt-5">Glem jagten på lykke</h3>
+        <p class="text-[12px] md:text-[16px]">Hvordan kan det være at flere mennesker end nogensinde oplever stress, angst, depression, ensomhed, m.v. når vi lever i en tid med mere velstand, flere muligheder og et højere uddannelsesniveau…</p>
       </div>
       <div>
-        <img src="" alt="img" />
-        <h3>Tanker fra en ubegribelig tid</h3>
-        <p>For 11 år siden tog jeg de første skridt for at realisere en drøm. En drøm om at skabe et arbejdsliv med dyb mening, fyldt med passion og livsglæde. Et…</p>
+        <img src="/section103.webp" alt="billede af skitur" />
+        <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px] text-[var(--color-tertiary-400)] mt-5">Tanker fra en ubegribelig tid</h3>
+        <p class="text-[12px] md:text-[16px]">For 11 år siden tog jeg de første skridt for at realisere en drøm. En drøm om at skabe et arbejdsliv med dyb mening, fyldt med passion og livsglæde. Et…</p>
       </div>
     </div>
-    <button class="underline decoration-tertiary-400 text-black rounded"> Se flere blogs </button>
+    <div class="bg-primary-400 flex justify-center mt-10">
+      <a class="underline decoration-tertiary-400 text-black rounded decoration-2 text-[12px] md:text-[20px]" href="https://www.hojskolendk.dk/om-os/blog/">Se flere blogs</a>
+    </div>
   </section>
   <section class="grid md:grid-cols-5">
-    <img src="" alt="img" /><img src="" alt="img" /><img src="" alt="img" /><img src="" alt="img" /><img src="" alt="img" />
+    <img src="/section111.webp" alt="billede af undervisning" /><img src="/section112.webp" alt="billede af vandfald" /><img src="/section113.webp" alt="billede af tuktuk" /><img src="/section114.webp" alt="billede af bjerge" /><img src="/section115.webp" alt="billede af kokketime" />
   </section>
+
   <section class="bg-secondary-400">
-    <h3>Trustpilot og udtalelser</h3>
-    <p>Her skal der indsættes udtalelser og trustpilot</p>
+    <h3 class="pb-2 md:pb-2 text-[12px] md:text-[20px] text-center">Trustpilot og udtalelser</h3>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <div class="bg-primary-400 md:p-10 rounded-2xl">
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Gør det- du vil aldrig fortryde det"</p>
+          <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Casper Kristensen</p>
+        </div>
+        <div class="bg-primary-400 md:p-10 rounded-2xl">
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Mit livs oplevelse. Fantatisk"</p>
+          <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Søren Schmidt</p>
+        </div>
+        <div class="bg-primary-400 md:p-10 rounded-2xl">
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Höjskolendk er rejseoplevelsernes <br /> svar på Ryan Gosling."</p>
+          <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Lise T. Hansen</p>
+        </div>
+        <div class="bg-primary-400 md:p-10 rounded-2xl">
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"En fantastisk og lærerig oplevelse"</p>
+          <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Benjamin Uhleman</p>
+        </div>
+        <div class="bg-primary-400 md:p-10 rounded-2xl">
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Den bedste beslutning jeg nogensinde har taget"</p>
+          <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Anna D. Mikkelsen</p>
+        </div>
+        <div class="bg-primary-400 md:p-10 rounded-2xl">
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Min rejse med Höjskolendk er <br /> noget af det bedste jeg har gjordt for mig selv!"</p>
+          <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Kristoffer Strandhauge</p>
+        </div>
+      </div>
+
+      <div class="carousel-buttons">
+        <button class="carousel-button prev">&#10094;</button>
+        <button class="carousel-button next">&#10095;</button>
+      </div>
+    </div>
   </section>
   <section class="bg-primary-400 p-10 md:p-20">
     <h3>VI GØR EN FORSKEL</h3>
