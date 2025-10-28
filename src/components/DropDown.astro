@@ -61,11 +61,17 @@
 
 <style>
   .dropdown-overskrift {
-    font-size: 1.1rem;
+    font-size: 15px;
     display: grid;
     padding-bottom: 1rem;
     margin-top: 1rem;
     font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    .dropdown-overskrift {
+      font-size: 17px;
+    }
   }
 
   details {
@@ -123,7 +129,7 @@
 
   @media screen and (max-width: 800px) {
     hr.streg1 {
-      width: 95%;
+      width: 100%;
       margin-left: auto;
       margin-right: 0;
     }
