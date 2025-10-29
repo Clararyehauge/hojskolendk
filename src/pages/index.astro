@@ -10,13 +10,16 @@ import DropDown from "../components/DropDown.astro";
 ---
 
 <MainLayout title="Forside">
-  <section>
-    <div>
-      <img src="/herosection.png" alt="hero" class="w-full h-screen object-cover" />
-      <Button variant="tertiary" size="medium">Infomøder</Button>
-      <Button variant="tertiary" size="medium">Vælg dit eventyr</Button>
-      <Button variant="tertiary" size="medium">Tilmeld dig nu</Button>
-    </div>
+  <section class="relative">
+  <img src="/herosection.png" alt="hero" class="w-full h-screen object-cover" />
+
+  <!-- Container til knapperne -->
+  <div class="absolute top-[40%] left-1/2 transform -translate-x-1/2 flex space-x-4">
+    <Button variant="tertiary" size="medium">Infomøder</Button>
+    <Button variant="tertiary" size="medium">Vælg dit eventyr</Button>
+    <Button variant="tertiary" size="medium">Tilmeld dig nu</Button>
+  </div>
+
 
     <div class="animate-bounce absolute inset-x-0 bottom-5 flex justify-center">
       <div class="relative w-16 h-16">
@@ -27,76 +30,96 @@ import DropDown from "../components/DropDown.astro";
   </section>
 
   <section class="bg-primary-400 p-10 md:p-20">
-    <h2 class="animate-fade-down animate-once animate-ease-in pb-5 md:pb-10 text-[17px] md:text-[27px] text-center">HÖJSKOLENDKS DESTINATIONER</h2>
-    <style>
-      .carousel-container {
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-      }
-      .carousel-track {
-        display: flex;
-        transition: transform 0.3s ease-in-out;
-        gap: 20px;
-      }
+  <h2
+    class="animate-fade-down animate-once animate-ease-in pb-5 md:pb-10 text-[17px] md:text-[27px] text-center">
+    HÖJSKOLENDKS DESTINATIONER
+  </h2>
+
+<style>
+    .carousel-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      gap: 20px;
+      scroll-behavior: smooth;
+    }
+
+    .carousel-track img {
+      flex: 0 0 auto;
+      width: 40%;
+      cursor: pointer;
+    }
+
+    .carousel-track img.active {
+      transform: scale(1.1);
+      z-index: 10;
+    }
+
+    @media (min-width: 768px) {
       .carousel-track img {
-        flex: 0 0 auto;
-        width: 40%; /* Mobil: 2 billeder */
-        cursor: pointer;
+        width: 20%;
       }
-      @media (min-width: 768px) {
-        .carousel-track img {
-          width: 20%; /* Desktop: 5 billeder */
-        }
-      }
-      .carousel-buttons {
-        display: flex;
-        justify-content: flex-end; /* Placer til højre */
-        gap: 10px; /* afstand mellem pilene */
-        margin-top: 10px;
-      }
-      .carousel-button {
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        font-size: 1.2rem;
-      }
-      .carousel-track > div {
-        flex: 0 0 auto; /* vigtigt */
-      }
-    </style>
+    }
 
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <img src="/srilanka.webp" class="transition-transform duration-300 hover:scale-105" alt="srilanka" />
-        <img src="/japan.webp" class="transition-opacity duration-500 hover:opacity-75" alt="japan" />
-        <img src="/dubai.webp" />
-        <img src="/vietnam.webp" />
-        <img src="/bali.webp" alt="bali" />
-        <img src="/nepal.webp" alt="nepal" />
-        <img src="/thailand.webp" alt="thailand" />
-        <img src="/brasillien.webp" alt="brasilien" />
-        <img src="/galapagos.webp" alt="galapagos" />
-        <img src="/indien.webp" alt="indien" />
-        <img src="/mexico.webp" alt="mexico" />
-        <img src="/peru.webp" alt="peru" />
-        <img src="/newzealand.webp" alt="newzealand" />
-        <img src="/australien.webp" alt="australien" />
-        <img src="/maldiverne.webp" alt="maldiverne" />
-      </div>
+    .carousel-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-      <div class="carousel-buttons">
-        <button class="carousel-button prev">&#10094;</button>
-        <button class="carousel-button next">&#10095;</button>
-      </div>
+    .carousel-button {
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      border-radius: 5px;
+    }
+
+    .carousel-button:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+  </style>
+
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="/srilanka.webp" alt="srilanka" />
+      <img src="/japan.webp" alt="japan" />
+      <img src="/dubai.webp" alt="dubai" />
+      <img src="/vietnam.webp" alt="vietnam" />
+      <img src="/bali.webp" alt="bali" />
+      <img src="/nepal.webp" alt="nepal" />
+      <img src="/thailand.webp" alt="thailand" />
+      <img src="/brasillien.webp" alt="brasilien" />
+      <img src="/galapagos.webp" alt="galapagos" />
+      <img src="/indien.webp" alt="indien" />
+      <img src="/mexico.webp" alt="mexico" />
+      <img src="/peru.webp" alt="peru" />
+      <img src="/newzealand.webp" alt="newzealand" />
+      <img src="/australien.webp" alt="australien" />
+      <img src="/maldiverne.webp" alt="maldiverne" />
     </div>
-  </section>
+
+    <div class="carousel-buttons">
+      <button class="carousel-button prev">&#10094;</button>
+      <button class="carousel-button next">&#10095;</button>
+    </div>
+  </div>
+
+</section>
+
+
   <section class="bg-primary-400 p-10 md:p-20">
     <h2 class="pb-5 md:pb-10 text-[17px] md:text-[27px] text-center">HÖJSKOLENDK</h2>
     <p class="text-[12px] md:text-[16px] max-w-auto md:max-w-[600px] mx-auto text-left">Vi brænder for oplevelser, fællesskab og mødet med nye mennesker og kulturer; derfor laver vi eventyrlige højskoleophold i udlandet. HÖJSKOLENDK er noget for dig, hvis du vil på højskole i udlandet og er vild med højskolefællesskab, vil med på et fantastisk rejseeventyr, glæder dig til at lære om fremmede kulturer, vil rejse med rygsæk, drømmer om en fed grupperejse med andre skønne unge, vil opleve et stærkt sammenhold og ønsker inspirerende og meningsfuld undervisning. Du er sikker på en tryg rejseoplevelse da vi er medlem af Rejsegarantifonden. Vi glæder os til at lære dig at kende!</p>
-    <div class="pt-5 md:pt-10 grid md:grid-cols-3 md:max-w-[800px] mx-auto text-left">
+    <div class="pt-5 md:pt-10 grid md:grid-cols-3 md:max-w-[680px] mx-auto text-left space-x-4">
       <Button variant="tertiary" size="medium">Infomøder</Button>
       <Button variant="tertiary" size="medium">Vælg dit eventyr</Button>
       <Button variant="tertiary" size="medium">Tilmeld dig nu</Button>
@@ -220,32 +243,32 @@ import DropDown from "../components/DropDown.astro";
     <div class="carousel-container pb-5 md:pb-10">
       <div class="carousel-track pl-5 md:pl-5">
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Gør det- du vil aldrig fortryde det"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Casper Kristensen</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Mit livs oplevelse. Fantatisk"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Søren Schmidt</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Höjskolendk er rejseoplevelsernes <br /> svar på Ryan Gosling."</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Lise T. Hansen</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"En fantastisk og lærerig oplevelse"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Benjamin Uhleman</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Den bedste beslutning jeg nogensinde har taget"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Anna D. Mikkelsen</p>
         </div>
         <div class="bg-primary-400 md:p-10 rounded-2xl">
-          <img class="animate-pulse scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
+          <img class="scale-250 block mx-auto" src="/stargroup.svg" alt="5-stjerner" />
           <p class="text-[12px] md:text-[16px] md:mt-5 text-[var(--color-tertiary-400)] text-center">"Min rejse med Höjskolendk er <br /> noget af det bedste jeg har gjordt for mig selv!"</p>
           <p class="text-[12px] md:text-[16px] md:mt-15 text-center">Kristoffer Strandhauge</p>
         </div>
@@ -344,4 +367,37 @@ import DropDown from "../components/DropDown.astro";
       });
     });
   </script>
+
+  <script>
+    const track = document.querySelector(".carousel-track");
+    const images = Array.from(track.children);
+    const nextButton = document.querySelector(".next");
+    const prevButton = document.querySelector(".prev");
+
+    let currentIndex = 0;
+
+    // Sæt første billede som aktivt
+    images[currentIndex].classList.add("active");
+
+    function updateActiveImage() {
+      images.forEach(img => img.classList.remove("active"));
+      images[currentIndex].classList.add("active");
+
+      // Scroll så det aktive billede er i fokus
+      const activeImage = images[currentIndex];
+      const offset = activeImage.offsetLeft - (track.clientWidth / 2) + (activeImage.clientWidth / 2);
+      track.scrollTo({ left: offset, behavior: "smooth" });
+    }
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateActiveImage();
+    });
+
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateActiveImage();
+    });
+  </script>
 </MainLayout>
+
