@@ -1,21 +1,12 @@
 ---
 const { variant = "primary", size = "medium" } = Astro.props;
-
 const buttonStyling = "border-0 px-6 py-2 rounded-xl text-white shadow-lg transition-all duration-300 ease-in-out font-[Lato]";
-
-const variantClasses = {
-  primary: "border-black hover:bg-black hover:text-white hover:-skew-x-12 transition-all duration-700",
-  secondary: "border-blue-500 hover:bg-blue-500 hover:border-blue-200",
-  tertiary: "bg-[var(--color-tertiary-400)] hover:bg-[var(--color-tertiary-500)] active:bg-[var(--color-tertiary-600)]",
-};
-
+const variantClasses = { primary: "border-black hover:bg-black hover:text-white hover:-skew-x-12 transition-all duration-700", secondary: "border-blue-500 hover:bg-blue-500 hover:border-blue-200", tertiary: "bg-[var(--color-tertiary-400)] hover:bg-[var(--color-tertiary-500)] active:bg-[var(--color-tertiary-600)]" };
 const sizeClasses = {
-  large: "text-2xl px-12 py-5",
-  medium: "text-base px-0.5 py-0.5",
-  small: "text-base px-6 py-2",
+  large: "text-3xl px-12 py-5", // stor tekst og padding på alle skærme
+  medium: "text-sm px-1 py-0.5 md:text-base md:px-10 md:py-3", // small på mobil, medium på md+
+  small: "text-xs px-4 py-1 md:text-sm", // ekstra small på mobil, small på md+
 };
 ---
 
-<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}>
-  <slot />
-</button>
+<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}> <slot /> </button>
