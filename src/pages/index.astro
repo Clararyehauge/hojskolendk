@@ -11,10 +11,10 @@ import DropDown from "../components/DropDown.astro";
 
 <MainLayout title="Forside">
   <section class="relative">
-    <img src="/herosection.png" alt="hero" class="w-full h-screen object-cover" />
+    <img src="/herosection.png" alt="hero" class="w-full h-screen object-cover object-top" />
 
     <!-- Container til knapperne -->
-    <div class="absolute top-[40%] left-1/2 transform -translate-x-1/2 flex md:flex flex-col md:flex-row gap-5 md:space-x-12">
+    <div class="absolute top-[40%] md:top-[60%] left-1/2 transform -translate-x-1/2 flex md:flex flex-col md:flex-row gap-5 md:space-x-12">
       <Button variant="tertiary" size="medium">Infomøder</Button>
       <Button variant="tertiary" size="medium">Vælg dit eventyr</Button>
       <Button variant="tertiary" size="medium">Tilmeld dig nu</Button>
