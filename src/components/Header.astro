@@ -1,29 +1,63 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
+const currentPath = pathname.slice(1);
 ---
 
-<header x-data="{ showmenu: false }" class="">
-  <div id="navbar" class="container mx-auto p-4 flex flex-row justify-between items-center">
-    <div id="logo" class="">
-      <a href="#" class="font-display text-4xl">x</a>
-    </div>
-    <nav id="desktopmenu" class="hidden lg:block">
-      <ul class="flex flex-row gap-4">
-        <li class=""><a href="/" class={currentPath === "" ? "italic font-bold" : "italic"}>Forside</a></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
-        <li class=""><a href="/komponentbibliotek/" class={currentPath === "komponentbibliotek/" ? "italic font-bold" : "italic"}>Komponentbibliotek</a></li>
+<header x-data="{ showmenu: false }" class="absolute top-0 left-0 w-full z-50 text-white bg-transparent">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2">
+      <img src="/logo.svg" alt="Logo" class="h-8 w-auto" />
+      <div class="text-orange-500 font-bold text-xl leading-tight">
+        HØJSKOLE<span class="text-white">NDK</span>
+        <div class="text-xs font-normal text-white -mt-1">dit livs eventyr!</div>
+      </div>
+    </a>
+
+    <!-- Desktop menu -->
+    <nav class="hidden lg:block">
+      <ul class="flex gap-8 text-white font-medium">
+        <li>
+          <a href="#" class="flex items-center gap-1 hover:text-orange-400 transition">
+            Højskoleophold
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-1 hover:text-orange-400 transition">
+            Sommerhøjskole
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"></path>
+            </svg>
+          </a>
+        </li>
+        <li><a href="#" class="hover:text-orange-400 transition">Priser</a></li>
+        <li>
+          <a href="#" class="flex items-center gap-1 hover:text-orange-400 transition">
+            Om os
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"></path>
+            </svg>
+          </a>
+        </li>
       </ul>
     </nav>
-    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"
-      ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+
+    <!-- Burger menu -->
+    <button class="lg:hidden focus:outline-none" x-on:click="showmenu = ! showmenu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
   </div>
-  <nav id="mobilmenu" class="flex flex-col content-center" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
-    <ul class="border-t-2 border-b-2 border-black">
-      <li class="text-center py-2"><a href="/" class={currentPath === "" ? "italic font-bold" : "italic"}>Forside</a></li>
-      <li class="text-center py-2"><a href="/komponentbibliotek/" class={currentPath === "komponentbibliotek/" ? "italic font-bold" : "italic"}>Komponentbibliotek</a></li>
-    </ul>
+
+  <!-- Mobile Menu -->
+  <nav class="lg:hidden bg-black/80 text-white text-center space-y-2 py-4 transition-all duration-300" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
+    <a href="#" class="block py-2 hover:text-orange-400">Højskoleophold</a>
+    <a href="#" class="block py-2 hover:text-orange-400">Sommerhøjskole</a>
+    <a href="#" class="block py-2 hover:text-orange-400">Priser</a>
+    <a href="#" class="block py-2 hover:text-orange-400">Om os</a>
   </nav>
 </header>
