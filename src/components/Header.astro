@@ -1,12 +1,7 @@
----
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
----
-
-<header x-data="{ showmenu: false }" class="absolute top-0 left-0 w-full z-50 text-white bg-transparent">
+<header x-data="{ scrolled: false, showmenu: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" :class="scrolled ? 'fixed bg-secondary-400 shadow-lg' : 'absolute bg-transparent'" class="top-0 left-0 w-full z-50 transition-all duration-300 text-white">
   <div class="container mx-auto px-4 py-3 flex justify-between items-center">
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-2">
+    <a href="/" class="flex items-center">
       <img src="/logo.svg" alt="Logo" class="h-8 md:h-10 w-auto" />
     </a>
 
@@ -50,7 +45,7 @@ const currentPath = pathname.slice(1);
   </div>
 
   <!-- Mobile Menu -->
-  <nav class="lg:hidden bg-black/80 text-white text-center space-y-2 py-4 transition-all duration-300" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
+  <nav class="lg:hidden bg-secondary-400/90 text-white text-center space-y-2 py-4 transition-all duration-300" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
     <a href="#" class="block py-2 hover:text-orange-400">Højskoleophold</a>
     <a href="#" class="block py-2 hover:text-orange-400">Sommerhøjskole</a>
     <a href="#" class="block py-2 hover:text-orange-400">Priser</a>
